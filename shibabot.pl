@@ -77,6 +77,17 @@ sub said {
 				body => $spaces . "wow",
 			);
 
+			$spaces = "";
+			for (my $i = 0; $i <= int(rand(20)); $i++) {
+				$spaces = $spaces . " "
+			}
+
+			$self->say(
+				channel => $message->{channel},
+				body => $spaces . "much " . $synonyms[$index],
+			);
+
+
 		}
 
 		return;

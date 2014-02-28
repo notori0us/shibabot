@@ -70,12 +70,12 @@ sub said {
 
 			$self->say(
 				channel => $message->{channel},
-				body => generate_spaces() . "wow",
+				body => generate_spaces() . "so " . $synonyms[$index],
 			);
 
 			$self->say(
 				channel => $message->{channel},
-				body => generate_spaces() . "so " . $synonyms[$index],
+				body => generate_spaces() . "wow",
 			);
 
 		}

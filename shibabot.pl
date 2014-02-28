@@ -5,11 +5,21 @@ use strict;
 package ShibaBot;
 use base qw( Bot::BasicBot );
 
+# CONFIGURIGATION
+# --------------------------------------------------
+
 # path to thesaurus
 # 	expected to be word,synonym1,synonym2,...,synonymn,
 my $path_to_thesaurus = "./thesaurus";
 
-my @channels = ['#osuosc','#think', '#r/linux', '#twitchplayspokemon'];
+my $nick = "shibabot";
+my $server = "chat.freenode.net";
+my @channels = ['#osuosc','#think', '#r/linux'];
+
+#possible responses
+my @doge = ("so", "much", "very");
+
+# begin
 
 # said callback
 sub said {
@@ -54,8 +64,6 @@ sub said {
 
 		my $size = scalar @synonyms;
 
-		my @response_words = ("such","much");
-
 		if ($size > 0){
 
 			my $index = int(rand($size));
@@ -65,12 +73,12 @@ sub said {
 
 			$self->say(
 				channel => $message->{channel},
-				body => generate_spaces() . $response_words[rand @response_words]. " " . $word,
+				body => generate_spaces() . "such " . $word,
 			);
 
 			$self->say(
 				channel => $message->{channel},
-				body => generate_spaces() . "so " . $synonyms[$index],
+				body => generate_spaces() . $doge[rand @doge] . " " . $synonyms[$index],
 			);
 
 			$self->say(
@@ -84,7 +92,7 @@ sub said {
 	}
 }
 ShibaBot->new(
-	server => 'irc.freenode.net',
+	server => $server,
 	channels => @channels,
-	nick => 'shibabot',
+	nick => $nick,
 )->run();

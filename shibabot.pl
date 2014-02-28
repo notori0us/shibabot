@@ -34,11 +34,27 @@ sub said {
 
 		close (THESAURUS);
 
+
+		# Generate spaces
+		sub generate_spaces {
+
+			my $spaces;
+			$spaces = "";
+			for (my $i = 0; $i <= int(rand(25)); $i++) {
+				$spaces = $spaces . " "
+			}
+
+			return $spaces;
+
+		}
+
 		# split what we just got into a list of synonyms
 		# 	then pick random ones
 		my @synonyms = split(',', $_);
 
 		my $size = scalar @synonyms;
+
+		my @response_words = ("such","much");
 
 		if ($size > 0){
 
@@ -47,34 +63,19 @@ sub said {
 				$index = 1;
 			}
 
-			my $spaces;
-			for (my $i = 0; $i <= int(rand(20)); $i++) {
-				$spaces = $spaces . " "
-			}
-
 			$self->say(
 				channel => $message->{channel},
-				body =>  $spaces . "such " . $word,
+				body => generate_spaces() . $response_words[rand @response_words]. " " . $word,
 			);
 
-			$spaces = "";
-			for (my $i = 0; $i <= int(rand(20)); $i++) {
-				$spaces = $spaces . " "
-			}
-
 			$self->say(
 				channel => $message->{channel},
-				body => $spaces . "so " . $synonyms[$index],
+				body => generate_spaces() . "wow",
 			);
 
-			$spaces = "";
-			for (my $i = 0; $i <= int(rand(20)); $i++) {
-				$spaces = $spaces . " "
-			}
-
 			$self->say(
 				channel => $message->{channel},
-				body => $spaces . "wow",
+				body => generate_spaces() . "so " . $synonyms[$index],
 			);
 
 		}

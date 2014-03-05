@@ -33,7 +33,6 @@ sub said {
 		# lowercase input
 		$word = lc($word);
 
-
 		# read through thesaurus to find synonyms
 		open( THESAURUS, "<", $path_to_thesaurus )
 			or die "couldn't open thesaurus file";

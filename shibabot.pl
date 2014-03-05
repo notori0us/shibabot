@@ -30,6 +30,8 @@ sub said {
 		$text =~ s/^\.doge\ //;
 
 		(my $word) = $text=~/(\w+)/;
+		# lowercase input
+		$word = lc($word);
 
 
 		# read through thesaurus to find synonyms

@@ -2,6 +2,22 @@
 use warnings;
 use strict;
 
+# shibabot, such bot very wow
+# Copyright (C) 2014 Chris Wallace (notori0us) <wallace.586@osu.edu>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 package ShibaBot;
 use base qw( Bot::BasicBot );
 
@@ -12,16 +28,18 @@ use base qw( Bot::BasicBot );
 # 	expected to be word,synonym1,synonym2,...,synonymn,
 my $path_to_thesaurus = "./thesaurus";
 
+# such details
 my $nick = "shibabot";
 my $server = "chat.freenode.net";
-my @channels = ['#osuosc','#think', '#r/linux'];
+my @channels = ['#osuosc','#think', '#r/linux', '#ncsulug'];
+# wow
 
-#possible responses
+# possible response prefixes
 my @doge = ("so", "much", "very");
 
-# begin
+# CODE
+# --------------------------------------------------
 
-# said callback
 sub said {
 	my ($self, $message) = @_;
 
@@ -92,6 +110,10 @@ sub said {
 		return;
 	}
 }
+
+# SHIBE
+# --------------------------------------------------
+
 ShibaBot->new(
 	server => $server,
 	channels => @channels,

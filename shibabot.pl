@@ -35,7 +35,7 @@ my @channels = ['#osuosc','#think', '#r/linux', '#ncsulug'];
 # wow
 
 # possible response prefixes
-my @doge = ("so", "much", "very");
+my @doge = ("so", "much", "very", "many");
 
 # possible final words
 my @ending = ("wow", "amaze");

@@ -37,6 +37,9 @@ my @channels = ['#osuosc','#think', '#r/linux', '#ncsulug'];
 # possible response prefixes
 my @doge = ("so", "much", "very");
 
+# possible final words
+my @ending = ("wow", "amaze");
+
 # CODE
 # --------------------------------------------------
 
@@ -102,7 +105,7 @@ sub said {
 
 			$self->say(
 				channel => $message->{channel},
-				body => generate_spaces() . "wow",
+				body => generate_spaces() . $ending[rand @ending],
 			);
 
 		}

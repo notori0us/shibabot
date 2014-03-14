@@ -57,7 +57,7 @@ sub said {
 
 		while(<THESAURUS>) {
 			chomp;
-			next unless /^$word,/;
+			next unless /^\Q$word,/;
 			last;
 		}
 
